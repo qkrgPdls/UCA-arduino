@@ -1,6 +1,6 @@
 #include <Servo.h>
 Servo servo;
-
+// s 0 1023 m 0 180
 
 void setup() {
   // put your setup code here, to run once:
@@ -15,8 +15,8 @@ void loop() {
   delay(1000);
   servo.write(180);
   delay(1000);*/
-  int light = digitalRead(7);
-  Serial.println(light);
+  int light = analogRead(A0);
+  /*Serial.println(light);
   if(light < 100){
     for(int i = 0;i < 181;i++){
       servo.write(i);
@@ -32,5 +32,6 @@ void loop() {
   }
   else{
     digitalWrite(4, LOW);
-  }
+  }*/
+  servo.write(light/5);
 }
