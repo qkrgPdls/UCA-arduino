@@ -17,7 +17,7 @@ void loop() {
   delay(1000);*/
   int light = digitalRead(7);
   Serial.println(light);
-  if(light < 300){
+  if(light < 100){
     for(int i = 0;i < 181;i++){
       servo.write(i);
      delay(10);
@@ -29,7 +29,8 @@ void loop() {
       
     }
     digitalWrite(4, HIGH);
-    delay(100);
   }
-  
+  else{
+    digitalWrite(4, LOW);
+  }
 }
