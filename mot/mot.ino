@@ -33,5 +33,6 @@ void loop() {
   else{
     digitalWrite(4, LOW);
   }*/
-  servo.write(light/5);
+  //servo.write(light/5);
+  
 }
