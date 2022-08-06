@@ -5,12 +5,23 @@ Stepper ulsan(stepsPerRev, 11, 9, 10, 8);
 void setup() {
   // put your setup code here, to run once:
      ulsan.setSpeed(10);
+     Serial.begin(9600);
+     pinMode(4, INPUT);
+     pinMode(3, INPUT_PULLUP);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  ulsan.step(stepsPerRev); // 기본 시계 방향
-  delay(1000);
-  ulsan.step(-stepsPerRev);//시계 반대 방향 
-  delay(1000);
+  int a = digitalRead(3);
+  int b = digitalRead(4);
+
+  Serial.println(a);
+  
+  /*if(a == LOW){
+    ulsan.step(stepsPerRev); 
+  }*/
+  if(b == LOW){
+    ulsan.step(-1); 
+  }
+  
 }
